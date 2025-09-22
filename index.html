@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="container">
+        <h1> lista de tarefas</h1>
+        <p class ="sub">Projeto Front-end para iniciantes - HTML + CSS + JS</p>
+    </header>
+    
+    <main> class="container">
+        <form id="form" class ="card" autocomplete="off">
+        <label for="tarefa">Nova rtarefa</label>
+        <div class="row">
+            <input id="tarefa" type="text" placeholder="Ex.:estudar 20 minutos" />
+            <button id="btnAdd" type="submit">Adicionar</button>
+        </div>
+        <small id="erro"class="erro"aria-live="polite"></small>
+    </form>
+
+    <section class="card">
+        <div class="toolbar">
+        <div class="filtros">role="group" aria-label="Filtros">
+            <button class="btn-filtro ativado" data-filtro="todas" type ="button"> Todas</button>
+            <button class="btn-filtro" data-filtro="ativas" type="button">ativas</button>
+            <button class="btn-filtro" data-filtro="concluidas" type="button">Conclidas</button>
+         </div>
+         <button class="btnLimparConcluidas" aria-colcount="sec" type="button">Limpar concluidas</button>
+        </div>
+        <ul id="lista" aria-live="polite" ></ul>
+        <div class="contadores">
+            <span>Total: <strong id="countTotal">0</strong></span>
+            <span>Concluidas: <strong id="countDone"></strong></span>
+        </div>
+    </section>
+
+    <section class="card">
+        <details>
+            <summary>Salvar tarefas no navegador</summary>
+            <p class="muted"> Ative para guardar lista entre aberturas do arquivo.</p>
+            <label class="toggle">
+                <input id="persist" type="checkbox" />
+                <span>Ativar Persistencia (local storage)</span>
+            </label>
+        </details>
+    </section>
+    </main>
+
+   <footer class="container">
+    <p class="muted">Dicas: adicione, marque como concluída, exclua e filtre.-<span class="mono">HTML/CSS/JS puro</span></p>
+   </footer>
+
+   <template id="tplItem">
+    <li class="item">
+     <label class="item-linha">
+      <input class="chk" type="checkbox"/>
+      <span class="texto"></span>
+     </label>
+     <div class="acoes">
+      <button class="btnDel" title="Exluir">🗑</button> 
+     </div>
+    </li>
+   </template>
+
+   <script src="script.js"></script>
+</body>
+</html>
